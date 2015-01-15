@@ -1,0 +1,10 @@
+{
+  "name": "puppetfinland-dnsutils",
+  "version": "0.2.0",
+  "author": "Puppet-Finland team",
+  "license": "BSD license",
+  "summary": "Setup dnsutils",
+  "source": "https://github.com/Puppet-Finland/dnsutils.git",
+  "project_page": "https://github.com/Puppet-Finland/dnsutils",
+  "dependencies": [ ]
+}
