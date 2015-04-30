@@ -5,7 +5,7 @@
 class dnsutils::install inherits dnsutils::params {
 
     package { 'dnsutils-dnsutils':
-        name => "${::dnsutils::params::package_name}",
         ensure => installed,
+        name   => $::dnsutils::params::package_name,
     }
 }

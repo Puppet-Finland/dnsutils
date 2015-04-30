@@ -2,6 +2,12 @@
 #
 # This class sets up dnsutils (a.k.a. bind-utils)
 #
+# == Parameters
+#
+# [*manage*]
+#   Whether to manage dnsutils with Puppet or not. Valid values are 'yes' 
+#   (default) and 'no'.
+#
 # == Authors
 #
 # Samuli Seppänen <samuli.seppanen@gmail.com>
@@ -10,12 +16,15 @@
 #
 # BSD-license. See file LICENSE for details.
 #
-class dnsutils inherits dnsutils::params
+class dnsutils
+(
+    $manage = 'yes'
+
+) inherits dnsutils::params
 {
 
-# Rationale for this is explained in init.pp of the sshd module
-if hiera('manage_dnsutils', 'true') != 'false' {
+if $manage == 'yes' {
 
-    include dnsutils::install
+    include ::dnsutils::install
 }
 }
